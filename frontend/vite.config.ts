@@ -4,9 +4,13 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@shared': path.resolve(__dirname, '../shared')
+    }
+  },
   server: {
-    fs: {
-      
+    fs: {  
       allow: ['..']
     }
   }

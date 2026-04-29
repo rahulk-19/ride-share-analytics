@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { EventType } from '../../../../shared/types.ts';
-import type { TransportEvent } from '../../../../shared/types.ts';
+import { EventType } from '@shared/types';
+import type { TransportEvent } from '@shared/types';
 
 export function Dashboard({ events }: { events: TransportEvent[] }) {
   const [filterType, setFilterType] = useState<string>('all');

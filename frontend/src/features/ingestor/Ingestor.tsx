@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { EventType } from '../../../../shared/types.ts';
+import { EventType } from '@shared/types';
 
 interface IngestorProps {
   onEventSent: () => void; 
@@ -14,6 +14,7 @@ export function Ingestor({ onEventSent }: IngestorProps) {
   const handleSubmit = async () => {
     const fromClean = formData.from.trim();
     const toClean = formData.to.trim();
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
     if (!fromClean || !toClean) {
       setFeedback({ type: 'error', message: 'Both From and To locations are required.' });
@@ -32,7 +33,7 @@ export function Ingestor({ onEventSent }: IngestorProps) {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/api/events', {
+      const response = await fetch(`${API_URL}/api/events`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(event)

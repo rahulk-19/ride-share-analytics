@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Ingestor } from './features/ingestor/Ingestor';
 import { Dashboard } from './features/dashboard/Dashboard';
-import type { TransportEvent } from '../../shared/types';
+import type { TransportEvent } from '@shared/types';
 import './App.css';
 
 function App() {
@@ -10,7 +10,11 @@ function App() {
 
   const fetchEvents = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/analytics');
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+      const res = await fetch(`${API_URL}/api/analytics`);
+      
+      if (!res.ok) throw new Error('Network response error');
+      
       const data = await res.json() as TransportEvent[];
       setEvents(data);
     } catch (err) {
