@@ -1,0 +1,15 @@
+services:
+  redpanda:
+    image: docker.redpanda.com/redpandadata/redpanda:latest
+    command:
+      - redpanda start
+      - --overprovisioned
+      - --smp 1
+      - --memory 1G
+      - --reserve-memory 0M
+      - --node-id 0
+      - --check=false
+      - --kafka-addr PLAINTEXT://0.0.0.0:29092,OUTSIDE://0.0.0.0:8080
+      - --advertise-kafka-addr PLAINTEXT://redpanda:29092,OUTSIDE://localhost:8080
+    ports:
+      - "8080:8080"
