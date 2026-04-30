@@ -37,6 +37,11 @@ Head over to /dashboard to view the live analytics. Here, the backend consumer p
 
 ## Setup & Installation (Local)
 
+**Note:** If you're using docker branch run `docker-compose` and skip other steps
+```bash
+docker-compose up -d
+```
+
 This project uses a containerized infrastructure to ensure the message broker is ready for event streaming out of the box.
 
 ### 1. Prerequisites
