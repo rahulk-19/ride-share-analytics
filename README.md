@@ -76,7 +76,7 @@ Head over to /dashboard to view the live analytics. Here, the backend consumer p
 
 * **Resilient Connections:** Implements recursive retry logic for Kafka producers to handle broker boot-up delays.
 
-* **Shared Type System:** Utilizes a central TypeScript definition for events used by both the producer (Frontend) and consumer (Backend).
+* **Shared Type System:** Utilizes a central TypeScript definition for events used by both the producer and consumer.
 
 * **Environment Agnostic:** Fully configured for seamless migration from local Docker to Cloud environments (Vercel/Railway) using Environment Variables.
 
