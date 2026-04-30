@@ -35,12 +35,7 @@ Head over to /dashboard to view the live analytics. Here, the backend consumer p
 
 ---
 
-## Setup & Installation (Local)
-
-**Note:** If you're using docker branch run `docker-compose` and skip other steps
-```bash
-docker-compose up -d
-```
+## Setup & Installation
 
 This project uses a containerized infrastructure to ensure the message broker is ready for event streaming out of the box.
 
@@ -48,21 +43,26 @@ This project uses a containerized infrastructure to ensure the message broker is
 - [Docker & Docker Compose](https://www.docker.com/get-started)
 - [Node.js](https://nodejs.org/) (LTS)
 
-### 2. Infrastructure (Redpanda)
-Spin up the prebuilt Redpanda Docker container to handle the event streaming:
+### 2. Environment Variables
+Create a .env files in the backend/ and frontend/ directory **Use .env.example**
+
+### 3. Starting the Stack
+Spin up the docker containers:
 ```bash
-docker-compose up -d
+docker-compose up -d --build
 ```
 
-### 3. Backend Setup (TS & Node.js)
+### 4. For developement without Docker
+
+**Note**: built-in Redpanda container must be running
+
 ```bash
+# Backend
 cd backend
 npm install
 npm run dev
-```
 
-### 4. Frontend Setup (React)
-```bash
+# Frontend
 cd frontend
 npm install
 npm run dev
