@@ -24,11 +24,11 @@ services:
     container_name: rides-backend
     ports:
       - "3000:3000"
+    env_file:
+    - ./backend/.env
     environment:
       - NODE_ENV=production
-      - REDPANDA_BROKERS=redpanda:8080
       - PORT=3000
-      - CORS_ORIGIN=http://localhost
     depends_on:
       - redpanda
     restart: unless-stopped
