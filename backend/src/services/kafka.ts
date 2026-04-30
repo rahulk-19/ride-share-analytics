@@ -14,7 +14,7 @@ const sasl: SASLOptions | undefined = process.env.KAFKA_SASL === 'true'
 
 const kafka = new Kafka({
   clientId: 'ride-app',
-  brokers: [process.env.KAFKA_BROKERS || 'localhost:8080'],
+  brokers: [process.env.KAFKA_BROKERS || 'redpanda:8080'],
   ssl: process.env.KAFKA_SASL === 'true',
   sasl: sasl,
   retry: { initialRetryTime: 300, retries: 10 }

@@ -1,31 +1,19 @@
 {
   "compilerOptions": {
-    /* Base Options */
     "target": "ESNext",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "lib": ["ESNext"],
     "skipLibCheck": true,
-
-    /* Folder Layout */
-    "rootDir": "../",               
+    "rootDir": "..",
     "outDir": "./dist",
-    // baseUrl removed to fix deprecation error
-
-    /* Interop & Strictness */
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noImplicitAny": true,
-    "verbatimModuleSyntax": true,   
     "isolatedModules": true,
-
-    /* Module Detection */
-    "moduleDetection": "force"
+    "declaration": false,
+    "sourceMap": true
   },
-  "include": [
-    "src/**/*", 
-    "../shared/**/*"
-  ],
+  "include": ["src/**/*", "../shared/**/*"],
   "exclude": ["node_modules"]
 }

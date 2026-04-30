@@ -28,6 +28,10 @@ app.get('/api/analytics', (req, res) => {
   res.json(eventStore);
 });
 
+app.get('/health', (req, res) => {
+  res.json({ status: 'healthy' });
+});
+
 const start = async () => {
   try {
     // Connect via our service

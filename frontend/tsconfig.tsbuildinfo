@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/features/dashboard/dashboard.tsx","./src/features/ingestor/ingestor.tsx","./src/lib/api.ts","../shared/types.ts"],"version":"6.0.3"}
